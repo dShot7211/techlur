@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Public+Sans:wght@500&display=swap");
+* {
+  font-family: "Montserrat", sans-serif !important;
+}
+body {
+  overflow-x: hidden !important;
+}
+::-webkit-scrollbar {
+  width: 0px;
+  height: 8px;
+}
+.bg-img {
+  background-image: url("../assets/loginBg.png");
+}
+.center-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-css {
+  background: #ffff;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px !important;
+  border-radius: 6px !important;
+  padding: 20px 25px;
+}
+
+.just-hover:hover {
+  cursor: pointer;
+}
