@@ -22,8 +22,8 @@ function App() {
       );
       setUsers(res?.data?.data);
     } catch (error) {
-      console.log("err", error.response.data.message);
-      toast.error(error.response.data.message);
+      console.log("err", error?.response?.data?.message);
+      toast.error(error?.response?.data?.message);
     }
     setIsLoading(false);
   };
@@ -35,35 +35,35 @@ function App() {
   const columns = [
     {
       name: "Name",
-      selector: (row) => <div style={{ textAlign: "left" }}>{row.name}</div>,
+      selector: (row) => <div style={{ textAlign: "left" }}>{row?.name}</div>,
     },
     {
       name: "Email",
-      selector: (row) => <div style={{ textAlign: "left" }}>{row.email}</div>,
+      selector: (row) => <div style={{ textAlign: "left" }}>{row?.email}</div>,
       width: "200px",
     },
     {
       name: "Salary",
       selector: (row) => (
-        <div style={{ textAlign: "left" }}> ₹ {row.salary}</div>
+        <div style={{ textAlign: "left" }}> ₹ {row?.salary}</div>
       ),
     },
     {
       name: "DOB",
       selector: (row) => (
-        <div style={{ textAlign: "left" }}>{ddmmyyyy(row.dob)}</div>
+        <div style={{ textAlign: "left" }}>{ddmmyyyy(row?.dob)}</div>
       ),
     },
     {
       name: "Joining Date",
       selector: (row) => (
-        <div style={{ textAlign: "left" }}>{ddmmyyyy(row.joinDate)}</div>
+        <div style={{ textAlign: "left" }}>{ddmmyyyy(row?.joinDate)}</div>
       ),
     },
     {
       name: "Relieving Date",
       selector: (row) => (
-        <div style={{ textAlign: "left" }}>{ddmmyyyy(row.relievingDate)}</div>
+        <div style={{ textAlign: "left" }}>{ddmmyyyy(row?.relievingDate)}</div>
       ),
     },
     {
@@ -73,12 +73,12 @@ function App() {
           <SwitchComponent row={row} getAllUsers={getAllUsers} />
           <span
             style={{
-              color: row.status === true ? "#49af41" : "gray",
+              color: row?.status === true ? "#49af41" : "gray",
               fontSize: "10px",
               marginLeft: "8px",
             }}
           >
-            {row.status === true ? "Active" : "Inactive"}
+            {row?.status === true ? "Active" : "Inactive"}
           </span>
         </div>
       ),
@@ -98,7 +98,7 @@ function App() {
   ];
 
   return (
-    <Grid container sx={{ width: "100vw", py: 5, px: 8 }}>
+    <Grid container sx={{ width: "100vw", py: 5, px: { md: 8, sm: 4, xs: 4 } }}>
       <ToastContainer position="top-right" theme="dark" />
       <Grid md={12} sx={{ textAlign: "center", mb: 4 }}>
         <img src={logo} alt="logo" width="80px" />
@@ -110,11 +110,14 @@ function App() {
         sx={{
           display: "flex",
           justifyContent: "space-between",
-          alignItems: "center",
+          alignItems: { md: "center", sm: "flex-start", xs: "flex-start" },
+          flexDirection: { md: "row", sm: "column", xs: "column" },
           mb: 3,
         }}
       >
-        <Typography sx={{ fontSize: "30px", color: "green" }}>
+        <Typography
+          sx={{ fontSize: "30px", color: "green", mb: { md: 0, sm: 2, xs: 2 } }}
+        >
           Employe Management
         </Typography>
         <div>

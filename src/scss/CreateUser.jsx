@@ -48,9 +48,9 @@ const CreateUser = ({ getAllUsers, view, row }) => {
     }
   }, [row, open]);
 
-  console.log("dobValue", dobValue);
-  console.log("jDateValue", jDateValue);
-  console.log("rDateValue", rDateValue);
+  // console.log("dobValue", dobValue);
+  // console.log("jDateValue", jDateValue);
+  // console.log("rDateValue", rDateValue);
   const handleClickOpen = () => {
     setOpen(true);
   };
